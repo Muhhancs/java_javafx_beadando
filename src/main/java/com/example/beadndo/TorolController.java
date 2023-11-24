@@ -42,6 +42,9 @@ public class TorolController implements Initializable {
     @FXML
     private Label isConnected;
 
+    HttpsURLConnection apiconnection;
+    String apitoken = "37cdfd4d37abacf7c0803a358c1fce131d125371e95fe4f88aac0bf3019b0abb";
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (connectionModel.isDbConnected()) {
@@ -108,7 +111,7 @@ public class TorolController implements Initializable {
         }
     }
     public void restd_click(ActionEvent event) throws IOException {
-        String ID = "5711470";
+        String ID = "5772998";
         DELETE(ID);
     }
 

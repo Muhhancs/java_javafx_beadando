@@ -38,6 +38,9 @@ public class IrController {
     public Button postapi_button;
     public TextArea restp_textArea;
 
+    HttpsURLConnection apiconnection;
+    String apitoken = "37cdfd4d37abacf7c0803a358c1fce131d125371e95fe4f88aac0bf3019b0abb";
+
 
     public void beszuras_click(ActionEvent event) {
         String query = "insert into pizza values (\"" + pizza_nev_textField.getText() + "\",\"" + kategoria_nev_textField.getText() + "\"," + vega_Button.isSelected() + ")";
@@ -74,7 +77,7 @@ public class IrController {
     }
 
     public void postapi_click(ActionEvent event) throws IOException {
-        POST("GAMF Imre", "male", "kalpat_example@data.hu", "active");
+        POST("GAMF Imre", "male", "pizzafutar_example@data.hu", "active");
 
     }
     void POST(String name, String gender, String email, String status) throws IOException {

@@ -24,6 +24,9 @@ import java.util.logging.Logger;
 public class AlgoritmusController {
     public Label label1;
 
+    int correct=0;
+    String name;
+
     public void vissza_click(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -52,6 +55,7 @@ public class AlgoritmusController {
         new GépiTanulás2CrossValidation(fájlNév, classIndex, classifier);
         new GépiTanulás2CrossValidation(fájlNév, classIndex, new RandomForest());
         //kiir.close();
+        label1.setText("A legjobb Correctly Classified Instances eredményt\na(z) "+name+"\nalgoritmus ért el");
     }
 
     public class GépiTanulás2CrossValidation {
@@ -70,11 +74,15 @@ public class AlgoritmusController {
                     evaluation.crossValidateModel(classifier, instances, 10, new Random(1));
                     writer.write(evaluation.toSummaryString("\nResults", false));
                     writer.write("Correctly Classified Instances:" + (int) evaluation.correct() + "\t" + 100 * evaluation.correct() / instances.size() + "%");
+                    if ((int) evaluation.correct() > correct)
+                    {
+                        correct = (int) evaluation.correct();
+                        name = classifier.getClass().toString();
+                    }
                     writer.write("Incorrectly Classified Instances:" + (instances.size() - (int) evaluation.correct()));
                     writer.newLine();
                     writer.newLine();
                     writer.newLine();
-                    label1.setText("Az adatok kiírva a Gépi tanulás.txt fájlba.");
                 } catch (Exception e) {
                     System.out.println("Error Occurred!!!! \n" + e.getMessage());
                 }
