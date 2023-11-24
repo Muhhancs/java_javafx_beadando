@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="285.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.beadndo.ZarasController">
+   <children>
+      <Button fx:id="mutat_button" layoutX="215.0" layoutY="71.0" mnemonicParsing="false" onAction="#mutat_click" text="Zárás" />
+      <Button fx:id="vissza_button" layoutX="25.0" layoutY="70.0" mnemonicParsing="false" onAction="#vissza_click" prefHeight="25.0" prefWidth="72.0" text="Vissza" />
+      <Label fx:id="arfolyam_label" layoutX="26.0" layoutY="135.0" />
+      <TextField fx:id="zar_textfield" layoutX="23.0" layoutY="28.0" prefHeight="25.0" prefWidth="245.0" promptText="Zárni kívánt trade ID-ja" />
+   </children>
+</AnchorPane>
